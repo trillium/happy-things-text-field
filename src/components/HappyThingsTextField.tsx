@@ -71,6 +71,13 @@ function HappyThingsTextField(): React.ReactElement {
       <div
         className="pl-6 py-2 whitespace-pre-wrap border dark:border-gray-600 rounded-md hover:cursor-pointer dark:hover:bg-gray-700"
         onClick={handleCopyButton}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            handleCopyButton();
+          }
+        }}
       >
         {outputText}
       </div>
