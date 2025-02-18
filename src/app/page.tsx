@@ -1,7 +1,13 @@
+"use client";
+
+import HappyThingsTextField from "@/components/HappyThingsTextField";
+
 export default function Home() {
   return (
     <main>
-      <div>Hello world!</div>
+      <div>
+        <HappyThingsTextField />
+      </div>
     </main>
   );
 }
