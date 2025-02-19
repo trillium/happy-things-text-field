@@ -15,8 +15,12 @@ const whichDay: { [key: string]: string } = {
 };
 
 function HappyThingsTextField(): React.ReactElement {
+  const currentHour = new Date().getHours();
+  const initialDay =
+    currentHour < 6 || currentHour > 17 ? whichDay.today : whichDay.yesterday;
+
   const [text, setText] = useState<string>("");
-  const [selectedDay, setSelectedDay] = useState<string>(whichDay.today);
+  const [selectedDay, setSelectedDay] = useState<string>(initialDay);
   const [copyButtonText, setCopyButtonText] =
     useState<string>("Copy to Clipboard");
 
