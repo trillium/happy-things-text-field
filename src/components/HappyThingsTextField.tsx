@@ -41,7 +41,12 @@ function HappyThingsTextField(): React.ReactElement {
     ("\n" + text)
       .split("\n")
       .filter((v) => v.length > 0)
-      .map((v) => "\n- " + v.charAt(0).toUpperCase() + v.slice(1))
+      .map(
+        (v) =>
+          "\n- " +
+          v.trimStart().charAt(0).toUpperCase() +
+          v.trimStart().slice(1)
+      )
       .join("");
 
   return (
